@@ -142,6 +142,12 @@
             <artifactId>elasticsearch</artifactId>
             <version>${elasticsearch.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring-boot-devtools.version}</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
     </dependencyManagement>
 
@@ -167,6 +173,7 @@
         <commons-lang3.version>3.10</commons-lang3.version>
         <okhttp.version>4.8.1</okhttp.version>
         <elasticsearch.version>7.12.1</elasticsearch.version>
+        <spring-boot-devtools.version>2.7.9</spring-boot-devtools.version>
     </properties>
 
 </project>

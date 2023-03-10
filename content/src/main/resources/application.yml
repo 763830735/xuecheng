@@ -17,3 +17,6 @@ spring:
       initial-size: 1
       min-idle: 1
       maxActive: 20
+  devtools:
+    restart:
+      enabled: true
