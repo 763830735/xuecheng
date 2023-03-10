@@ -7,6 +7,9 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.ysmdz.constant.Constant;
+
+import static com.ysmdz.constant.Constant.*;
 
 import java.util.Arrays;
 
@@ -14,26 +17,20 @@ import java.util.Arrays;
  * MyBatis-Plus 代码生成类
  */
 public class ContentCodeGenerator {
-
-	// TODO 修改服务名以及数据表名
-	private static final String SERVICE_NAME = "xuecheng";
-
-	//数据库账号
-	private static final String DATA_SOURCE_USER_NAME  = "root";
-	//数据库密码
-	private static final String DATA_SOURCE_PASSWORD  = "Amorww2121";
 	//生成的表
 	private static final String[] TABLE_NAMES = new String[]{
-//			"mq_message",
-//			"mq_message_history"
-			 "course_base",
-//			 "course_market",
-//			 "teachplan",
-//			 "teachplan_media",
-//			 "course_teacher",
-//			"course_category"
-//			 "course_publish",
-//			 "course_publish_pre"
+			"course_audit",
+			"course_base",
+			"course_category",
+			"course_market",
+			"course_publish",
+			"course_publish_pre",
+			"course_teacher",
+			"mq_message",
+			"mq_message_history",
+			"teachplan",
+			"teachplan_media",
+			"teachplan_work",
 	};
 
 	// TODO 默认生成entity，需要生成DTO修改此变量
@@ -66,17 +63,17 @@ public class ContentCodeGenerator {
 		// 数据库配置
 		DataSourceConfig dsc = new DataSourceConfig();
 		dsc.setDbType(DbType.MYSQL);
-		dsc.setUrl("jdbc:mysql://192.168.233.128:3307/" + SERVICE_NAME
+		dsc.setUrl("jdbc:mysql://"+ DATA_SOURCE_URL.name+"/" + content.name
 				+ "?serverTimezone=UTC&useUnicode=true&useSSL=false&characterEncoding=utf8");
 //		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-		dsc.setUsername(DATA_SOURCE_USER_NAME);
-		dsc.setPassword(DATA_SOURCE_PASSWORD);
+		dsc.setUsername(DATA_SOURCE_USER_NAME.name);
+		dsc.setPassword(DATA_SOURCE_PASSWORD.name);
 		mpg.setDataSource(dsc);
 
 		// 包配置
 		PackageConfig pc = new PackageConfig();
-		pc.setModuleName(SERVICE_NAME);
+		pc.setModuleName("content");
 		pc.setParent("com.xuecheng");
 
 		pc.setServiceImpl("service.impl");

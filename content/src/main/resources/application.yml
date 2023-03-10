@@ -8,9 +8,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.233.128:3307/xuecheng?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    url: jdbc:mysql://192.168.233.128:3307/xcplus_content?serverTimezone=Asia/Shanghai&allowMultiQueries=true
     username: root
-    password: root
+    password: Amorww2121
     druid:
       # 连接池的配置信息
       # 初始化大小，最小，最大

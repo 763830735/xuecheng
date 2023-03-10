@@ -1,21 +1,21 @@
 package com.ysmdz.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ysmdz.mapper.CourseBaseMapper;
-import com.ysmdz.model.po.CourseBase;
-import com.ysmdz.service.CourseBaseService;
+import com.ysmdz.mapper.TeachplanMediaMapper;
+import com.ysmdz.model.po.TeachplanMedia;
+import com.ysmdz.service.TeachplanMediaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 课程基本信息 服务实现类
+ *  服务实现类
  * </p>
  *
  * @author itcast
  */
 @Slf4j
 @Service
-public class CourseBaseServiceImpl implements CourseBaseService {
+public class TeachplanMediaServiceImpl implements TeachplanMediaService {
 
 }

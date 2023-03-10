@@ -13,10 +13,8 @@ public class SpringdocConfig {
     public OpenAPI openAPI(){
         return new OpenAPI().info(
                 new Info()
-                        .contact(new Contact().name("用什么点缀").email("763830735@qq.com"))
                         .title("学成在线接口")
-                        .description("学成在线接口")
-                        .version("1.0")
+                        .description("需要注意,如果需要分页，在请求地址添加 ?current=0&pageSize=10?")
         );
     }
 }

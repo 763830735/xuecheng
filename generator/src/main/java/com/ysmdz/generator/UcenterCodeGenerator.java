@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.ysmdz.constant.Constant;
 
 import java.util.Arrays;
 
@@ -14,14 +15,6 @@ import java.util.Arrays;
  * MyBatis-Plus 代码生成类
  */
 public class UcenterCodeGenerator {
-
-	// TODO 修改服务名以及数据表名
-	private static final String SERVICE_NAME = "ucenter";
-
-	//数据库账号
-	private static final String DATA_SOURCE_USER_NAME  = "root";
-	//数据库密码
-	private static final String DATA_SOURCE_PASSWORD  = "mysql";
 	//生成的表
 	private static final String[] TABLE_NAMES = new String[]{
 			"xc_company",
@@ -68,13 +61,12 @@ public class UcenterCodeGenerator {
 				+ "?serverTimezone=UTC&useUnicode=true&useSSL=false&characterEncoding=utf8");
 //		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-		dsc.setUsername(DATA_SOURCE_USER_NAME);
-		dsc.setPassword(DATA_SOURCE_PASSWORD);
+		dsc.setUsername(Constant.DATA_SOURCE_USER_NAME.name);
+		dsc.setPassword(Constant.DATA_SOURCE_PASSWORD.name);
 		mpg.setDataSource(dsc);
 
 		// 包配置
 		PackageConfig pc = new PackageConfig();
-		pc.setModuleName(SERVICE_NAME);
 		pc.setParent("com.xuecheng");
 
 		pc.setServiceImpl("service.impl");

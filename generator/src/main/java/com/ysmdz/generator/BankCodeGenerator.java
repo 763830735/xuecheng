@@ -10,15 +10,13 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.Arrays;
 
+import static com.ysmdz.constant.Constant.*;
+import static com.ysmdz.constant.Constant.DATA_SOURCE_PASSWORD;
+
 /**
  * MyBatis-Plus 代码生成类
  */
 public class BankCodeGenerator {
-
-	// TODO 修改服务名以及数据表名
-	private static final String SERVICE_NAME = "bank1";
-	private static final String DATA_SOURCE_USER_NAME  = "root";
-	private static final String DATA_SOURCE_PASSWORD  = "root";
 	private static final String[] TABLE_NAMES = new String[]{
 			"account_info",
 			"de_duplication",
@@ -36,13 +34,14 @@ public class BankCodeGenerator {
 		// 全局配置
 		GlobalConfig gc = new GlobalConfig();
 		gc.setFileOverride(true);
-		gc.setOutputDir(System.getProperty("user.dir") + "/xuecheng-plus-generator/src/main/java");
+		//生成路径 "/generator/src/main/java
+		gc.setOutputDir(System.getProperty("user.dir"));
 		gc.setAuthor("itcast");
 		gc.setOpen(false);
 		gc.setSwagger2(false);
 		gc.setServiceName("%sService");
-        gc.setBaseResultMap(true);
-        gc.setBaseColumnList(true);
+		gc.setBaseResultMap(true);
+		gc.setBaseColumnList(true);
 
 		if (IS_DTO) {
 			gc.setSwagger2(true);
@@ -53,16 +52,18 @@ public class BankCodeGenerator {
 		// 数据库配置
 		DataSourceConfig dsc = new DataSourceConfig();
 		dsc.setDbType(DbType.MYSQL);
-		dsc.setUrl("jdbc:mysql://localhost:3306/" + SERVICE_NAME
-				+ "?useUnicode=true&useSSL=false&characterEncoding=utf8");
-		dsc.setDriverName("com.mysql.jdbc.Driver");
-		dsc.setUsername(DATA_SOURCE_USER_NAME);
-		dsc.setPassword(DATA_SOURCE_PASSWORD);
+		dsc.setUrl("jdbc:mysql://"+ DATA_SOURCE_URL.name+"/" + content.name
+				+ "?serverTimezone=UTC&useUnicode=true&useSSL=false&characterEncoding=utf8");
+//		dsc.setDriverName("com.mysql.jdbc.Driver");
+		dsc.setDriverName("com.mysql.cj.jdbc.Driver");
+		dsc.setUsername(DATA_SOURCE_USER_NAME.name);
+		dsc.setPassword(DATA_SOURCE_PASSWORD.name);
 		mpg.setDataSource(dsc);
 
 		// 包配置
 		PackageConfig pc = new PackageConfig();
-		pc.setParent("com.xuecheng.rocketmq");
+		pc.setModuleName("content");
+		pc.setParent("com.xuecheng");
 
 		pc.setServiceImpl("service.impl");
 		pc.setXml("mapper");

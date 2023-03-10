@@ -1,8 +1,7 @@
 package com.ysmdz.mapper;
 
-import com.ysmdz.model.po.CourseBase;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
+import com.ysmdz.model.po.CourseBase;
 
 /**
  * <p>
@@ -11,7 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  *
  * @author itcast
  */
-@Mapper
 public interface CourseBaseMapper extends BaseMapper<CourseBase> {
 
 }

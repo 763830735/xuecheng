@@ -1,16 +1,16 @@
 package com.ysmdz.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.ysmdz.model.po.CourseBase;
+import com.ysmdz.model.po.CourseTeacher;
 
 /**
  * <p>
- * 课程基本信息 服务类
+ * 课程-教师关系表 服务类
  * </p>
  *
  * @author itcast
  * @since 2023-03-11
  */
-public interface CourseBaseService{
+public interface CourseTeacherService{
 
 }

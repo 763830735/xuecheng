@@ -10,18 +10,13 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.Arrays;
 
+import static com.ysmdz.constant.Constant.*;
+import static com.ysmdz.constant.Constant.DATA_SOURCE_PASSWORD;
+
 /**
  * MyBatis-Plus 代码生成类
  */
 public class MessageCodeGenerator {
-
-	// TODO 修改服务名以及数据表名
-	private static final String SERVICE_NAME = "messagesdk";
-
-	//数据库账号
-	private static final String DATA_SOURCE_USER_NAME  = "root";
-	//数据库密码
-	private static final String DATA_SOURCE_PASSWORD  = "mysql";
 	//生成的表
 	private static final String[] TABLE_NAMES = new String[]{
 			"mq_message",
@@ -48,14 +43,14 @@ public class MessageCodeGenerator {
 		// 全局配置
 		GlobalConfig gc = new GlobalConfig();
 		gc.setFileOverride(true);
-		//生成路径
-		gc.setOutputDir(System.getProperty("user.dir") + "/xuecheng-plus-generator/src/main/java");
+		//生成路径 "/generator/src/main/java
+		gc.setOutputDir(System.getProperty("user.dir"));
 		gc.setAuthor("itcast");
 		gc.setOpen(false);
 		gc.setSwagger2(false);
 		gc.setServiceName("%sService");
-        gc.setBaseResultMap(true);
-        gc.setBaseColumnList(true);
+		gc.setBaseResultMap(true);
+		gc.setBaseColumnList(true);
 
 		if (IS_DTO) {
 			gc.setSwagger2(true);
@@ -66,17 +61,17 @@ public class MessageCodeGenerator {
 		// 数据库配置
 		DataSourceConfig dsc = new DataSourceConfig();
 		dsc.setDbType(DbType.MYSQL);
-		dsc.setUrl("jdbc:mysql://192.168.101.65:3306/xcplus_content"
+		dsc.setUrl("jdbc:mysql://"+ DATA_SOURCE_URL.name+"/" + content.name
 				+ "?serverTimezone=UTC&useUnicode=true&useSSL=false&characterEncoding=utf8");
 //		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-		dsc.setUsername(DATA_SOURCE_USER_NAME);
-		dsc.setPassword(DATA_SOURCE_PASSWORD);
+		dsc.setUsername(DATA_SOURCE_USER_NAME.name);
+		dsc.setPassword(DATA_SOURCE_PASSWORD.name);
 		mpg.setDataSource(dsc);
 
 		// 包配置
 		PackageConfig pc = new PackageConfig();
-		pc.setModuleName(SERVICE_NAME);
+		pc.setModuleName("content");
 		pc.setParent("com.xuecheng");
 
 		pc.setServiceImpl("service.impl");
