@@ -1,16 +1,17 @@
 package com.ysmdz.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.ysmdz.model.po.CoursePublish;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 课程发布 服务类
+ * 课程发布 服务实现类
  * </p>
  *
  * @author itcast
- * @since 2023-03-11
  */
-public interface CoursePublishService  {
+@Slf4j
+@Service
+public class CoursePublishService {
 
 }

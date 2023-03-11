@@ -20,3 +20,7 @@ spring:
   devtools:
     restart:
       enabled: true
+mybatis-plus:
+  configuration:
+#    用于控制台打印sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
