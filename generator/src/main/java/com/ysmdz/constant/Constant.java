@@ -7,9 +7,9 @@ import lombok.Data;
 数据库名
  */
 public enum Constant {
-    DATA_SOURCE_URL("192.168.233.128:3307"),
+    DATA_SOURCE_URL("000.000.000.000:3306"),
     DATA_SOURCE_USER_NAME("root"),
-    DATA_SOURCE_PASSWORD("Amorww2121"),
+    DATA_SOURCE_PASSWORD(""),
     content("xcplus_content"),
     learning("xcplus_learning"),
     media("xcplus_media"),
