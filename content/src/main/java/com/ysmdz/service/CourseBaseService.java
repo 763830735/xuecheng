@@ -41,7 +41,6 @@ public class CourseBaseService {
 
         Page<CourseBase> page=new Page<>(PageUtils.getCurrent(),PageUtils.getSize());
         courseBaseMapper.selectPage(page, queryWrapper);
-        List<CourseBaseDTO> courseBaseDTOS = BeanCopyUtils.copyList(page.getRecords(), CourseBaseDTO.class);
-        return courseBaseDTOS;
+        return BeanCopyUtils.copyList(page.getRecords(), CourseBaseDTO.class);
     }
 }
