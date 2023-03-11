@@ -24,3 +24,5 @@ mybatis-plus:
   configuration:
 #    用于控制台打印sql
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:com/ysmdz/mapper/*.xml
