@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.233.128:3307/xcplus_content?serverTimezone=Asia/Shanghai&allowMultiQueries=true
     username: root
-    password: Amorww2121
+    password: 
     druid:
       # 连接池的配置信息
       # 初始化大小，最小，最大
