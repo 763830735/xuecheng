@@ -1,0 +1,26 @@
+GET  http://localhost:8081/courseBase/queryCourse?current=4&pageSize=2 HTTP/1.1
+content-type: application/json
+
+{
+    "companyId":1
+}
+
+GET http://localhost:8081/teachplan/queryAllTeachplan HTTP/1.1
+content-type: application/json
+
+{
+    "courseId":82
+}
+
+POST  http://localhost:8081/teachplan/insertTeachPlan HTTP/1.1
+content-type: application/json
+
+{
+    "courseId":82,
+    "pname":"testtesttesttest",
+    "parentid":"0",
+    "grade":"0",
+    "mediaType":"1",
+    "orderby":"1",
+    "mediaFileName":"testttttt"
+}

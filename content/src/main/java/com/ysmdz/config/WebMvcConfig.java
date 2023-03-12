@@ -1,7 +1,7 @@
 package com.ysmdz.config;
 
 
-import com.ysmdz.handler.PageableHandlerInterceptor;
+import com.ysmdz.strategy.PageableHandlerInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

@@ -1,9 +1,9 @@
 package com.ysmdz.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ysmdz.model.dto.UpdateCourseDto;
 import com.ysmdz.model.po.CourseBase;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -17,5 +17,7 @@ import java.util.Map;
  */
 @Mapper
 public interface CourseBaseMapper extends BaseMapper<CourseBase> {
-    List<UpdateCourseDto> oneCourseBaseWithMarket(Long id);
+    List<Map<String, Object>> queryCourse(@Param("companyId") Long companyId, @Param("name") String name,
+                                          @Param("auditStatus") String auditStatus,@Param("status") String status,
+                                          @Param("current") long current,@Param("pageSize") long pageSize);
 }

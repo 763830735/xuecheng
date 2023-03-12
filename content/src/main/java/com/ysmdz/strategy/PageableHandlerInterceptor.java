@@ -1,4 +1,4 @@
-package com.ysmdz.handler;
+package com.ysmdz.strategy;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mysql.cj.util.StringUtils;
@@ -17,6 +17,9 @@ import java.util.Optional;
  * @date 2021/07/18
  **/
 public class PageableHandlerInterceptor implements HandlerInterceptor {
+    /*
+    Note: If current is less than 1, it doesn't work, so remove it.
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String currentPage = request.getParameter("current");

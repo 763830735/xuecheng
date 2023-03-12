@@ -1,17 +1,17 @@
-package com.ysmdz.service;
+package com.ysmdz.fun;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
  * <p>
- *  服务实现类
+ * 课程-教师关系表 服务实现类
  * </p>
  *
  * @author itcast
  */
 @Slf4j
 @Service
-public class MqMessageHistoryService {
+public class CourseTeacherService {
 
 }

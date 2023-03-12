@@ -1,15 +1,12 @@
 package com.ysmdz.controller;
 
-import com.ysmdz.model.dto.CoursePlanTreeDto;
-import com.ysmdz.service.TeachplanService;
+import com.ysmdz.fun.TeachplanService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -27,10 +24,15 @@ public class TeachplanController {
     private TeachplanService teachplanService;
 
     /*
-      根据课程id获取课程计划 每个叶子课程的课程媒资信息
+      根据课程id获取课程计划和课程媒资信息
      */
-    @GetMapping("/oneTeachplan")
-    public List<CoursePlanTreeDto> oneTeachplan(@Param("id") Long id){
-        return teachplanService.oneTeachPlan(id);
+    @GetMapping("/queryAllTeachplan")
+    public List<Map<String,Object>> queryAllTeachplan(@RequestBody Map<String,String> map){
+        return teachplanService.queryAllTeachplan(Long.valueOf(map.get("courseId")));
+    }
+
+    @PostMapping("insertTeachPlan")
+    public Map<String,Object> insertTeachPlan(@RequestBody Map<String,String> map){
+        return teachplanService.insertTeachPlan(map);
     }
 }

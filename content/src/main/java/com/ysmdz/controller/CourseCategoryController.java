@@ -1,7 +1,6 @@
 package com.ysmdz.controller;
 
-import com.ysmdz.model.dto.CourseCategoryTreeDto;
-import com.ysmdz.service.CourseCategoryService;
+import com.ysmdz.fun.CourseCategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,9 +23,4 @@ public class CourseCategoryController {
 
     @Autowired
     private CourseCategoryService courseCategoryService;
-
-    @GetMapping("/getCourseCategory")
-    public List<CourseCategoryTreeDto> getCourseCategory(){
-        return courseCategoryService.getCourseCategory();
-    }
 }

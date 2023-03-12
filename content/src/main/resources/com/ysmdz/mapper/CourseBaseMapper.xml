@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ysmdz.mapper.CourseBaseMapper">
-<!--    <select id="oneCourseBaseWithMarket" parameterType="Long" resultType="com.ysmdz.model.dto.UpdateCourseDto">-->
-<!--        select b.name,b.users,b.tags,b.mt,b.st,b.grade,b.teachmode,b.description,b.pic,b.audit_status,b.status,m.charge,m.price,m.original_price,m.qq,m.wechat,m.phone,m.valid_days from course_base b left join course_market m on b.id=m.id where b.id=#{id}-->
-<!--    </select>-->
-        <select id="oneCourseBaseWithMarket" parameterType="Long" resultType="com.ysmdz.model.dto.UpdateCourseDto">
-            select b.name,b.users,b.tags,b.mt,b.st,b.grade,b.teachmode,b.description,b.pic,b.audit_status,b.status,m.charge,m.price,m.original_price,m.qq,m.wechat,m.phone,m.valid_days from course_base b left join course_market m on b.id=m.id where b.id=#{id}
+        <select id="queryCourse" parameterType="Map" resultType="Map">
+            select b.id,b.name,b.users,b.tags,b.mt,b.st,b.grade,b.teachmode,b.description,b.pic,b.audit_status,b.status,
+                   m.charge,m.price,m.qq,m.wechat,m.phone,m.valid_days,
+                   t.teacher_name,t.position,t.introduction,t.photograph
+            from course_base b
+                     left join course_market m on b.id=m.id
+                     left join course_teacher t on b.id =t.id
+            where b.company_id=#{companyId}
+              <if test="name!=null"> and b.name like CONCAT('%',#{name},'%')</if>
+              <if test="auditStatus!=null"> and b.audit_status=#{auditStatus}</if>
+              <if test="status!=null"> and b.status=#{status}</if>
+            order by b.create_date desc
+            limit #{current},#{pageSize}
         </select>
 </mapper>

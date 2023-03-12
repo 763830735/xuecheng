@@ -1,11 +1,11 @@
 package com.ysmdz.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ysmdz.model.dto.CoursePlanTreeDto;
 import com.ysmdz.model.po.Teachplan;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -16,5 +16,6 @@ import java.util.List;
  */
 @Mapper
 public interface TeachplanMapper extends BaseMapper<Teachplan> {
-    List<CoursePlanTreeDto> oneTeachplan(Long id);
+    List<Map<String,Object>> queryAllTeachplan(Long id);
+    void insertTeachPlan(Map<String,String> map);
 }
